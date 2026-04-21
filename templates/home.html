@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="bike-grid">
+    {% for bike in bikes %}
+    <a href="{{ url_for('bike_details', bike_id=bike[0]) }}" >
+        <div class="bike-card w3-card-4 w3-white" style="border-radius: 50px; corner-shape: superellipse(2);">
+            <img src="{{ bike[3] }}" alt="{{ bike[1] }}" class="bike-image">
+            <div class="w3-container">
+                <h3>{{ bike[2] }}</h3>
+                <p style="font-family: 'Nunito'; font-weight: 200;">Maker: {{ bike[1] }}</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

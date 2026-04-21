@@ -30,7 +30,7 @@ def home(): # Home page
         JOIN Makers ON Bikes.MakerID = Makers.MakerID;
     """
     results = query_db(sql)
-    return render_template('layout.html')
+    return render_template('home.html', bikes=results)
 
 
 
