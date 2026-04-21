@@ -23,6 +23,17 @@ body {
     display: block;
     height: auto;
 }
+.bike-detail-image {
+    width: 100%;
+    border-radius: 50px;
+    corner-shape: superellipse(1.6);
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+}
 
 @media (max-width: 992px) {
     .bike-grid {

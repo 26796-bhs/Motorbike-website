@@ -42,7 +42,7 @@ def bike_details(bike_id): # Bike details page
         WHERE BikeID = ?;
     """
     result = query_db(sql, (bike_id,), one=True)
-    return str(result)
+    return render_template('biike_details.html', bike=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

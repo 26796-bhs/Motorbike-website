@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="two-column">
+    <img src="{{ bike[6] }}" alt="{{ bike[2] }}" class="bike-detail-image">
+    <div class="info">
+        <h1>{{ bike[2] }}</h1>
+        <p>Maker: <a style="font-family: 'Nunito'; font-weight: 200;">{{ bike[8] }}</a></p>
+        <p>Top Speed: <a style="font-family: 'Nunito'; font-weight: 200;">{{ bike[4] }} km/h</a></p>
+        <p>Cost: <a style="font-family: 'Nunito'; font-weight: 200;">${{ bike[5] }}</a></p>
+        <p>Description: <a style="font-family: 'Nunito'; font-weight: 200;"></br> {{ bike[5] }}</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
