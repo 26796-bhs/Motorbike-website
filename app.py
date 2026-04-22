@@ -24,7 +24,7 @@ def query_db(query, args=(), one=False):
     return (rv[0] if rv else None) if one else rv
 
 @app.route('/')
-def home(): # Home page
+def home():
     sql = """
         SELECT Bikes.BikeID, Makers.`Name `, Bikes.Model, Bikes.ImgURL FROM Bikes
         JOIN Makers ON Bikes.MakerID = Makers.MakerID;
@@ -35,14 +35,14 @@ def home(): # Home page
 
 
 @app.route('/bikes/<int:bike_id>')
-def bike_details(bike_id): # Bike details page
+def bike_details(bike_id):
     sql = """
         SELECT * FROM Bikes
         JOIN Makers ON Bikes.MakerID = Makers.MakerID
         WHERE BikeID = ?;
     """
     result = query_db(sql, (bike_id,), one=True)
-    return render_template('biike_details.html', bike=result)
+    return render_template('bike_details.html', bike=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
